@@ -1,7 +1,12 @@
 import mongoose from "mongoose"
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const connectDB = async () => {
-    await mongoose.connect('mongodb+srv://quickbite:Subha%232910@cluster0.rstvp.mongodb.net/food-del').then(() => {
+    await mongoose.connect(process.env.MONGODB_URI).then(() => {
         console.log("DB Connected");
     })
 }
+
+// Subha%232910
